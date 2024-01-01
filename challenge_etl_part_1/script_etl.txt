@@ -1,0 +1,20 @@
+ - DOWNLOAD DE UMA IMAGEM DO HUB 
+docker pull python
+
+ - RODANDO CONTAINER NO MODO INTERATIVO E CRIANDO UM VOLUME NO DIRETÓRIO /APP
+docker run -it -v sprint7_volume:/app/sprint7_volume python bash
+
+ - COPIANDO O ARQUIVO MOVIES.CSV PARA DENTRO DO VOLUME NO CONTAINER
+docker cp /home/briito/Documents/filmes_series/movies.csv 1fdb12028ec1:/app/sprint7_volume/movies.csv
+
+ - COPIANDO O ARQUIVO SERIES.CSV PARA DENTRO DO VOLUME NO CONTAINER
+docker cp /home/briito/Documents/filmes_series/series.csv 1fdb12028ec1:/app/sprint7_volume/series.csv
+
+ - COPIANDO O ARQUIVO SCRIPTS.PY PARA DENTRO DO VOLUME NO CONTAINER
+docker cp /home/briito/1_uniNorte/compassUOL/sprints/sprint7/challenge_etl_part_1/script.py 1fdb12028ec1:/app/sprint7_volume/script.py
+
+ - INSTALANDO A LIB: BOTO3
+pip install boto3
+
+ - RODANDO O COMANDO PARA EXECUTAR O SCRIPT PYTHON 
+python3 scripts.py
